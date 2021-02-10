@@ -613,10 +613,7 @@ function CreateProject(props) {
                         <label htmlFor="project_images">
                           <Typography
                             color="textSecondary"
-                            className={clsx(
-                              classes.customLabelStyle,
-                              commonClasses.marginBottom1em,
-                            )}
+                            className={classes.customLabelStyle}
                           >
                             <Box className={classes.fieldNumberStyle}>3</Box>
                             {t('createProject.inputs.projectImages.label')}
@@ -627,6 +624,7 @@ function CreateProject(props) {
                           color="textSecondary"
                           variant="caption"
                           component="span"
+                          className={commonClasses.marginBottom1em}
                         >
                           {t(
                             'createProject.inputs.projectImages.topHelperText',
@@ -703,10 +701,7 @@ function CreateProject(props) {
                         <label htmlFor="video">
                           <Typography
                             color="textSecondary"
-                            className={clsx(
-                              classes.customLabelStyle,
-                              commonClasses.marginBottom1em,
-                            )}
+                            className={classes.customLabelStyle}
                           >
                             <Box className={classes.fieldNumberStyle}>4</Box>
                             {t('createProject.inputs.video.label')}
@@ -716,6 +711,7 @@ function CreateProject(props) {
                           color="textSecondary"
                           variant="caption"
                           component="span"
+                          className={commonClasses.marginBottom1em}
                         >
                           {t('createProject.inputs.video.topHelperText')}
                         </Typography>
