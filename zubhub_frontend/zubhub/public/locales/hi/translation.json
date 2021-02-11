@@ -416,14 +416,14 @@
       },
       "email": {
         "label": "ईमेल",
-        "disabledHelperText": "इस फ़ील्ड मेल को संपादित करने के लिए admin@unstrucutred.studio",
+        "disabledHelperText": "इस फ़ील्ड मेल को संपादित करने के लिए admin@unstructured.studio",
         "errors": {
           "invalid": "अमान्य ईमेल"
         }
       },
       "phone": {
         "label": "फ़ोन",
-        "disabledHelperText": "इस फ़ील्ड मेल को संपादित करने के लिए admin@unstrucutred.studio",
+        "disabledHelperText": "इस फ़ील्ड मेल को संपादित करने के लिए admin@unstructured.studio",
         "errors": {
           "invalid": "फ़ोन नंबर प्रारूप में दर्ज किया जाना चाहिए: '+999999999'। 15 अंकों तक की अनुमति।"
         }
