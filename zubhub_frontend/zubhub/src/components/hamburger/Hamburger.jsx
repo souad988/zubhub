@@ -1,12 +1,12 @@
 import React from 'react';
-import Button from '@mui/material/Button';
-import MenuIcon from '@mui/icons-material/Menu';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 
 function Hamburger(props) {
     return (
-        <Button>
+        <IconButton>
             <MenuIcon/>
-        </Button>
+        </IconButton>
     );
 }
 

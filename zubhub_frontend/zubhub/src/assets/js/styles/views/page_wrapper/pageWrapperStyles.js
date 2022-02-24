@@ -140,6 +140,9 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
   },
+  hamburgerMenuStyle:{
+    color: 'white',
+  },
   avatarStyle: {
     cursor: 'pointer',
     backgroundColor: 'white',
