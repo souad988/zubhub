@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
@@ -10,7 +10,7 @@ import cn from 'classnames';
 const useStyles = makeStyles(styles);
 const useCommonStyles = makeStyles(commonStyles);
 
-const HamburgerButton = (props) => {
+const HamburgerButton = ({setHamburgerMenuOpen}) => {
     const classes = useStyles()
     const common_classes = useCommonStyles();
 
@@ -19,6 +19,7 @@ const HamburgerButton = (props) => {
             className={cn(classes.hamburgerMenuStyle, common_classes.addOnSmallScreen)}
             aria-label="hamburger_menu"
             aria-haspopup="true"
+            onClick={e => setHamburgerMenuOpen(true)}
         >
             <MenuIcon/>
         </IconButton>

@@ -13,7 +13,6 @@ import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
 import TranslateIcon from '@material-ui/icons/Translate';
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded';
 import SearchIcon from '@material-ui/icons/Search';
-import MenuIcon from '@material-ui/icons/Menu';
 import {
   CssBaseline,
   Container,
@@ -42,8 +41,6 @@ import {
   handleScrollTopClick,
   handleProfileMenuOpen,
   handleProfileMenuClose,
-  handleHamburgerMenuOpen,
-  handleHamburgerMenuClose,
   handleChangeLanguage,
   handleToggleSearchForm,
   closeSearchFormOrIgnore,
@@ -57,7 +54,8 @@ import unstructuredLogo from '../assets/images/logos/unstructured-logo.png';
 import logo from '../assets/images/logos/logo.png';
 import styles from '../assets/js/styles/views/page_wrapper/pageWrapperStyles';
 import commonStyles from '../assets/js/styles';
-import HamburgerButton from '../components/hamburger_menu/HamburgerButton.jsx'
+import HamburgerButton from '../components/hamburger_menu/HamburgerButton.jsx';
+import HamburgerSidebar from '../components/hamburger_menu/HamburgerSidebar';
 
 import languageMap from '../assets/js/languageMap.json';
 
@@ -77,7 +75,6 @@ function PageWrapper(props) {
 
   const [state, setState] = React.useState({
     username: null,
-    ham_anchor_el: null,
     anchor_el: null,
     loading: false,
     open_search_form: false,
@@ -108,7 +105,9 @@ function PageWrapper(props) {
   const { t } = props;
   const { hero } = props.projects;
   const profileMenuOpen = Boolean(anchor_el);
-  const hamburgerMenuOpen = Boolean(ham_anchor_el);
+
+  const [hamburgerMenuOpen, setHamburgerMenuOpen] = React.useState(false);
+
   return (
     <>
       <ToastContainer />
@@ -332,24 +331,13 @@ function PageWrapper(props) {
                     <SearchIcon />
                   </IconButton>
 
-                  <HamburgerButton/>
-
-                  <Menu
-                    className={classes.profileMenuStyle}
-                    open={hamburgerMenuOpen}
-                    onClose={e => handleSetState(handleHamburgerMenuClose(e))}
-                  >
-                    <MenuItem>
-                      <Typography
-                        variant="subtitle2"
-                        color="textPrimary"
-                        component="span"
-                        className={classes.profileStyle}
-                      >
-                        {props.auth.username}
-                      </Typography>
-                    </MenuItem>
-                  </Menu>
+                  <HamburgerButton 
+                    setHamburgerMenuOpen={setHamburgerMenuOpen}
+                  />
+                  <HamburgerSidebar
+                    hamburgerMenuOpen={hamburgerMenuOpen} 
+                    setHamburgerMenuO={setHamburgerMenuOpen}
+                  />
 
                   <Avatar
                     className={clsx(classes.avatarStyle, common_classes.removeOnSmallScreen)}
