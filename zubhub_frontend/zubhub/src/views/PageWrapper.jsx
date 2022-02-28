@@ -57,7 +57,7 @@ import unstructuredLogo from '../assets/images/logos/unstructured-logo.png';
 import logo from '../assets/images/logos/logo.png';
 import styles from '../assets/js/styles/views/page_wrapper/pageWrapperStyles';
 import commonStyles from '../assets/js/styles';
-import Hamburger from '../components/hamburger/Hamburger.jsx'
+import HamburgerButton from '../components/hamburger_menu/HamburgerButton.jsx'
 
 import languageMap from '../assets/js/languageMap.json';
 
@@ -331,14 +331,8 @@ function PageWrapper(props) {
                   >
                     <SearchIcon />
                   </IconButton>
-                  <IconButton
-                    className={clsx(classes.hamburgerMenuStyle, common_classes.addOnSmallScreen)}
-                    aria-label="hamburger_menu"
-                    aria-haspopup="true"
-                    onClick={e => handleSetState(handleHamburgerMenuOpen(e))}
-                  >
-                      <MenuIcon/>
-                  </IconButton>
+
+                  <HamburgerButton/>
 
                   <Menu
                     className={classes.profileMenuStyle}
@@ -355,8 +349,8 @@ function PageWrapper(props) {
                         {props.auth.username}
                       </Typography>
                     </MenuItem>
-
                   </Menu>
+
                   <Avatar
                     className={clsx(classes.avatarStyle, common_classes.removeOnSmallScreen)}
                     aria-label={`${props.auth.username}' Avatar`}
