@@ -8,6 +8,7 @@ import clsx from 'clsx';
 import {
     Typography,
     Drawer,
+    Box,
     Avatar,
     Menu,
     MenuItem,
@@ -27,21 +28,13 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
         }
       };
     return (
-        <Menu
-            className={classes.hamburgerMenuStyle}
+        <Drawer
+            className={classes.hamburgerSidebarStyle}
             id="hamburger_menu"
             open={hamburgerMenuOpen}
             onClose={e => handleSetState(handleHamburgerMenuClose(e))}
-            anchorEl={ham_anchor_el}
-            anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
-            keepMounted
-            transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-            }}
+            anchor={'right'}
+            PaperProps={{ style: { height: "80%", width: "70%", top: "3.5em" } }}
         >
             <MenuItem>
                 <Avatar
@@ -163,7 +156,7 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                     {t('pageWrapper.navbar.logout')}
                 </Typography>
             </MenuItem>
-        </Menu>
+        </Drawer>
     );
 }
 

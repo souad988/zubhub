@@ -140,9 +140,6 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
   },
-  hamburgerMenuStyle: {
-    color: 'white',
-  },
   avatarStyle: {
     cursor: 'pointer',
     backgroundColor: 'white',
@@ -152,6 +149,9 @@ const styles = theme => ({
     },
   },
   hamburgerMenuStyle: {
+    color: 'white',
+  },
+  hamburgerSidebarStyle: {
     '& .MuiList-root': {
       paddingTop: 0,
       '& .MuiListItem-root': {
