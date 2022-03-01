@@ -148,29 +148,6 @@ const styles = theme => ({
       width: '3em',
     },
   },
-  hamburgerMenuStyle: {
-    color: 'white',
-  },
-  hamburgerSidebarStyle: {
-    '& .MuiList-root': {
-      paddingTop: 0,
-      '& .MuiListItem-root': {
-        '&:first-child': {
-          backgroundColor: '#ededed',
-          paddingTop: '12px',
-          paddingBottom: '8px',
-        },
-      },
-    },
-    [theme.breakpoints.up('1600')]: {
-      '& .MuiMenu-paper': {
-        width: '10em',
-        '& .MuiTypography-root': {
-          fontSize: '1.2rem',
-        },
-      },
-    },
-  },
   profileMenuStyle: {
     '& .MuiList-root': {
       paddingTop: 0,

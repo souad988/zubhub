@@ -2,7 +2,7 @@ import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
-import styles from '../../assets/js/styles/views/page_wrapper/pageWrapperStyles';
+import styles from '../../assets/js/styles/components/hamburger_menu/hamburgerButtonStyles.js';
 import commonStyles from '../../assets/js/styles';
 import cn from 'classnames';
 import {handleHamburgerMenuOpen} from '../../views/pageWrapperScripts'
@@ -23,7 +23,7 @@ const HamburgerButton = ({setState}) => {
 
     return (
         <IconButton
-            className={cn(classes.hamburgerMenuStyle, common_classes.addOnSmallScreen)}
+            className={cn(classes.hamburgerButtonStyle, common_classes.addOnSmallScreen)}
             aria-label="hamburger_menu"
             aria-haspopup="true"
             onClick={e => handleSetState(handleHamburgerMenuOpen(e))}

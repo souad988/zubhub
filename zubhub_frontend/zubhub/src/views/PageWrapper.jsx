@@ -54,8 +54,8 @@ import unstructuredLogo from '../assets/images/logos/unstructured-logo.png';
 import logo from '../assets/images/logos/logo.png';
 import styles from '../assets/js/styles/views/page_wrapper/pageWrapperStyles';
 import commonStyles from '../assets/js/styles';
-import HamburgerButton from '../components/hamburger_menu/HamburgerButton.jsx';
-import HamburgerSidebar from '../components/hamburger_menu/HamburgerSidebar';
+import HamburgerButton from '../components/hamburger_menu/hamburgerButton.jsx';
+import HamburgerSidebar from '../components/hamburger_menu/hamburgerSidebar';
 
 import languageMap from '../assets/js/languageMap.json';
 

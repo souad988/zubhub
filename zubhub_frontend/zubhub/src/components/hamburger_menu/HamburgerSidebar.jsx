@@ -1,9 +1,10 @@
 import React from 'react';
-import styles from '../../assets/js/styles/views/page_wrapper/pageWrapperStyles';
+import styles from '../../assets/js/styles/components/hamburger_menu/hamburgerSidebarStyles.js';
 import commonStyles from '../../assets/js/styles';
 import { makeStyles } from '@material-ui/core/styles';
 import {logout, handleHamburgerMenuClose, handleProfileMenuOpen} from '../../views/pageWrapperScripts'
 import clsx from 'clsx';
+import cn from 'classnames';
 
 import {
     Typography,
