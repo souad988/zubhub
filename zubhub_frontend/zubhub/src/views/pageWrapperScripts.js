@@ -61,6 +61,14 @@ export const handleProfileMenuClose = () => {
   return { anchor_el: null };
 };
 
+export const handleHamburgerMenuOpen = e => {
+  return { ham_anchor_el: e.currentTarget };
+};
+
+export const handleHamburgerMenuClose = () => {
+  return { ham_anchor_el: null };
+}
+
 /**
 * @function handleChangeLanguage
 * @author Raymond Ndibe <ndiberaymond1@gmail.com>

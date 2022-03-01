@@ -41,6 +41,8 @@ import {
   handleScrollTopClick,
   handleProfileMenuOpen,
   handleProfileMenuClose,
+  handleHamburgerMenuOpen,
+  handleHamburgerMenuClose,
   handleChangeLanguage,
   handleToggleSearchForm,
   closeSearchFormOrIgnore,
@@ -75,6 +77,7 @@ function PageWrapper(props) {
 
   const [state, setState] = React.useState({
     username: null,
+    ham_anchor_el: null,
     anchor_el: null,
     loading: false,
     open_search_form: false,
@@ -105,6 +108,7 @@ function PageWrapper(props) {
   const { t } = props;
   const { hero } = props.projects;
   const profileMenuOpen = Boolean(anchor_el);
+  const hamMenuOpen = Boolean(ham_anchor_el);
 
   const [hamburgerMenuOpen, setHamburgerMenuOpen] = React.useState(false);
 
@@ -330,13 +334,14 @@ function PageWrapper(props) {
                   >
                     <SearchIcon />
                   </IconButton>
-
+                    
                   <HamburgerButton 
-                    setHamburgerMenuOpen={setHamburgerMenuOpen}
+                    setState={setState}
                   />
                   <HamburgerSidebar
-                    hamburgerMenuOpen={hamburgerMenuOpen} 
-                    setHamburgerMenuO={setHamburgerMenuOpen}
+                    hamMenuOpen={hamMenuOpen}
+                    ham_anchor_el={ham_anchor_el}
+                    setState={setState}
                   />
 
                   <Avatar

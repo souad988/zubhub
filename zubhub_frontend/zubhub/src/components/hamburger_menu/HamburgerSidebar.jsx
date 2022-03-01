@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../../assets/js/styles/views/page_wrapper/pageWrapperStyles';
 import { makeStyles } from '@material-ui/core/styles';
+import {handleHamburgerMenuClose} from '../../views/pageWrapperScripts'
 
 import {
     Typography,
@@ -10,23 +11,33 @@ import {
 
 const useStyles = makeStyles(styles);
 
-const HamburgerSidebar = ({hamburgerMenuOpen, setHamburgerMenuOpen}) => {
+const HamburgerSidebar = ({hamMenuOpen, ham_anchor_el, setState}) => {
     const classes = useStyles();
+    const handleSetState = obj => {
+        if (obj) {
+          Promise.resolve(obj).then(obj => {
+            setState(state => ({ ...state, ...obj }));
+          });
+        }
+      };
     return (
         <Menu
             className={classes.profileMenuStyle}
-            open={hamburgerMenuOpen}
-            onClose={e => setHamburgerMenuOpen(false)}
+            open={hamMenuOpen}
+            onClose={e => handleSetState(handleHamburgerMenuClose(e))}
+            anchorEl={ham_anchor_el}
+            anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+            }}
+            keepMounted
+            transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+            }}
         >
             <MenuItem>
-                <Typography
-                    variant="subtitle2"
-                    color="textPrimary"
-                    component="span"
-                    className={classes.profileStyle}
-                  >
-                    hello
-                </Typography>
+                hello
             </MenuItem>
         </Menu>
     );
