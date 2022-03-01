@@ -140,7 +140,7 @@ const styles = theme => ({
     display: 'flex',
     alignItems: 'center',
   },
-  hamburgerMenuStyle:{
+  hamburgerMenuStyle: {
     color: 'white',
   },
   avatarStyle: {
@@ -149,6 +149,26 @@ const styles = theme => ({
     [theme.breakpoints.up('1600')]: {
       height: '3em',
       width: '3em',
+    },
+  },
+  hamburgerMenuStyle: {
+    '& .MuiList-root': {
+      paddingTop: 0,
+      '& .MuiListItem-root': {
+        '&:first-child': {
+          backgroundColor: '#ededed',
+          paddingTop: '12px',
+          paddingBottom: '8px',
+        },
+      },
+    },
+    [theme.breakpoints.up('1600')]: {
+      '& .MuiMenu-paper': {
+        width: '10em',
+        '& .MuiTypography-root': {
+          fontSize: '1.2rem',
+        },
+      },
     },
   },
   profileMenuStyle: {

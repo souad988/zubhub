@@ -41,8 +41,6 @@ import {
   handleScrollTopClick,
   handleProfileMenuOpen,
   handleProfileMenuClose,
-  handleHamburgerMenuOpen,
-  handleHamburgerMenuClose,
   handleChangeLanguage,
   handleToggleSearchForm,
   closeSearchFormOrIgnore,
@@ -108,9 +106,7 @@ function PageWrapper(props) {
   const { t } = props;
   const { hero } = props.projects;
   const profileMenuOpen = Boolean(anchor_el);
-  const hamMenuOpen = Boolean(ham_anchor_el);
-
-  const [hamburgerMenuOpen, setHamburgerMenuOpen] = React.useState(false);
+  const hamburgerMenuOpen = Boolean(ham_anchor_el);
 
   return (
     <>
@@ -339,9 +335,11 @@ function PageWrapper(props) {
                     setState={setState}
                   />
                   <HamburgerSidebar
-                    hamMenuOpen={hamMenuOpen}
+                    hamburgerMenuOpen={hamburgerMenuOpen}
                     ham_anchor_el={ham_anchor_el}
                     setState={setState}
+                    t={t}
+                    props={props}
                   />
 
                   <Avatar
