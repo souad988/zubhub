@@ -1,10 +1,10 @@
 const styles = theme => ({
     hamburgerSidebarStyle: {
-        '& .MuiList-root': {
+        '& .MuiMenu-root': {
           paddingTop: 0,
-          '& .MuiListItem-root': {
+          '& .MuiMenuItem-root': {
             '&:first-child': {
-              backgroundColor: '#ededed',
+              backgroundColor: '#ffffff',
               paddingTop: '12px',
               paddingBottom: '8px',
             },
@@ -26,6 +26,20 @@ const styles = theme => ({
 
     logOutStyle: {
       borderTop: '1px solid #C4C4C4',
+    },
+
+    menuItemStyle: {
+      //backgroundColor: '#ededed',
+      '& .MuiMenuItem': {
+        backgroundColor: 'black',
+      },
+      height: '100px',
+      width: '100%',
+    },
+
+    avatarItemStyle: {
+      height: '200px',
+      justifyContent: "space-evenly",
     },
 });
 

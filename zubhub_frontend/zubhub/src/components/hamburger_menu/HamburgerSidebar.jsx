@@ -37,7 +37,7 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
             anchor={'right'}
             PaperProps={{ style: { height: "80%", width: "70%", top: "3.5em" } }}
         >
-            <MenuItem>
+            <MenuItem className={classes.avatarItemStyle}>
                 <Avatar
                     className={clsx(classes.avatarStyle)}
                     aria-label={`${props.auth.username}' Avatar`}
@@ -53,7 +53,7 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                     {props.auth.username}
                 </Typography>
             </MenuItem>
-            <MenuItem>
+            <MenuItem className={classes.menuItemStyle}>
                 <a className={classes.textDecorationNone} href="/profile">
                     <Typography
                         variant="subtitle2"
@@ -64,7 +64,7 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                     </Typography>
                 </a>
             </MenuItem>
-            <MenuItem>
+            <MenuItem className={classes.menuItemStyle}>
                 <a
                     className={classes.textDecorationNone}
                     href="/projects/create"
@@ -78,7 +78,7 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                     </Typography>
                 </a>
             </MenuItem>
-            <MenuItem>
+            <MenuItem className={classes.menuItemStyle}>
                 <a
                     className={classes.textDecorationNone}
                 >
@@ -91,7 +91,7 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                     </Typography>
                 </a>
             </MenuItem>
-            <MenuItem>
+            <MenuItem className={classes.menuItemStyle}>
                 <a
                     className={classes.textDecorationNone}
                     href={`/creators/${props.auth.username}/projects`}
@@ -105,7 +105,7 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                     </Typography>
                 </a>
             </MenuItem>
-            <MenuItem>
+            <MenuItem className={classes.menuItemStyle}>
                 <a
                     className={classes.textDecorationNone}
                     href={`/creators/${props.auth.username}/followers`}
@@ -119,7 +119,7 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                     </Typography>
                </a>
             </MenuItem>
-            <MenuItem>
+            <MenuItem className={classes.menuItemStyle}>
                 <a
                     className={classes.textDecorationNone}
                     href={`/creators/${props.auth.username}/following`}
@@ -133,7 +133,7 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                     </Typography>
                   </a>
             </MenuItem>
-            <MenuItem>
+            <MenuItem className={classes.menuItemStyle}>
                 <a
                     className={classes.textDecorationNone}
                     href="/projects/saved"
@@ -147,7 +147,7 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                     </Typography>
                 </a>
             </MenuItem>
-            <MenuItem className={classes.logOutStyle}>
+            <MenuItem className={cn(classes.menuItemStyle, classes.logOutStyle)}>
                 <Typography
                     className={common_classes.colorRed}
                     variant="subtitle2"
