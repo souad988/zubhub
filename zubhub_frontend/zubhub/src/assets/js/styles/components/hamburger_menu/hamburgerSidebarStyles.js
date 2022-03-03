@@ -28,10 +28,17 @@ const styles = theme => ({
       borderTop: '1px solid #C4C4C4',
     },
 
+    menuItemSelected: {
+      backgroundColor: 'black',
+    },
+
     menuItemStyle: {
-      //backgroundColor: '#ededed',
-      '& .MuiMenuItem': {
-        backgroundColor: 'black',
+      backgroundColor: '#ededed',
+      '&:hover': {
+        backgroundColor: '#00B8C4',
+        '& .MuiTypography-root': {
+          color: 'white',
+        },
       },
       height: '100px',
       width: '100%',
