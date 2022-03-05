@@ -15,6 +15,16 @@ const styles = theme => ({
 
     logOutStyle: {
       borderTop: '1px solid #C4C4C4',
+      backgroundColor: '#ededed',
+      '&:hover': {
+        backgroundColor: '#00B8C4',
+        '& .MuiTypography-root': {
+          color: 'white',
+        },
+      },
+      paddingLeft:'15%',
+      height: '10%',
+      width: '100%',
     },
 
     menuItemSelected: {
@@ -29,6 +39,7 @@ const styles = theme => ({
           color: 'white',
         },
       },
+      paddingTop: '6%',
       paddingLeft:'15%',
       height: '10%',
       width: '100%',

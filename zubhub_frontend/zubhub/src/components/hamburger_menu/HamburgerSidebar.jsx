@@ -53,101 +53,70 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                     {props.auth.username}
                 </Typography>
             </MenuItem>
-            <MenuItem className={classes.menuItemStyle}>
-                <a className={classes.textDecorationNone} href="/profile">
-                    <Typography
-                        variant="subtitle2"
-                        color="textPrimary"
-                        component="span"
-                    >
-                      {t('pageWrapper.navbar.profile')}
-                    </Typography>
-                </a>
-            </MenuItem>
-            <MenuItem className={classes.menuItemStyle}>
-                <a
-                    className={classes.textDecorationNone}
-                    href="/projects/create"
+            <Link href='/profile' className={classes.menuItemStyle} style={{ textDecoration: 'none' }}>
+                <Typography
+                    variant="subtitle2"
+                    color="textPrimary"
+                    component="span"
                 >
-                    <Typography
-                        variant="subtitle2"
-                        color="textPrimary"
-                        component="span"
-                    >
-                      {t('pageWrapper.navbar.createProject')}
-                    </Typography>
-                </a>
-            </MenuItem>
-            <MenuItem className={classes.menuItemStyle}>
-                <a
-                    className={classes.textDecorationNone}
+                  {t('pageWrapper.navbar.profile')}
+                </Typography>
+            </Link>
+            <Link href="/projects/create" className={classes.menuItemStyle} style={{ textDecoration: 'none' }}>
+                <Typography
+                    variant="subtitle2"
+                    color="textPrimary"
+                    component="span"
                 >
-                    <Typography
-                        variant="subtitle2"
-                        color="textPrimary"
-                        component="span"
-                    >
-                      Notifications
-                    </Typography>
-                </a>
-            </MenuItem>
-            <MenuItem className={classes.menuItemStyle}>
-                <a
-                    className={classes.textDecorationNone}
-                    href={`/creators/${props.auth.username}/projects`}
+                  {t('pageWrapper.navbar.createProject')}
+                </Typography>
+            </Link>
+            <Link className={classes.menuItemStyle} style={{ textDecoration: 'none' }}>
+                <Typography
+                    variant="subtitle2"
+                    color="textPrimary"
+                    component="span"
                 >
-                    <Typography
-                        variant="subtitle2"
-                        color="textPrimary"
-                        component="span"
-                    >
-                        {t('pageWrapper.navbar.projects')}
-                    </Typography>
-                </a>
-            </MenuItem>
-            <MenuItem className={classes.menuItemStyle}>
-                <a
-                    className={classes.textDecorationNone}
-                    href={`/creators/${props.auth.username}/followers`}
+                  Notifications
+                </Typography>
+            </Link>
+            <Link href={`/creators/${props.auth.username}/projects`} className={classes.menuItemStyle} style={{ textDecoration: 'none' }}>
+                <Typography
+                    variant="subtitle2"
+                    color="textPrimary"
+                    component="span"
                 >
-                    <Typography
-                        variant="subtitle2"
-                        color="textPrimary"
-                        component="span"
-                    >
-                        {t('pageWrapper.navbar.followers')}
-                    </Typography>
-               </a>
-            </MenuItem>
-            <MenuItem className={classes.menuItemStyle}>
-                <a
-                    className={classes.textDecorationNone}
-                    href={`/creators/${props.auth.username}/following`}
+                  {t('pageWrapper.navbar.projects')}
+                </Typography>
+            </Link>
+            <Link href={`/creators/${props.auth.username}/followers`} className={classes.menuItemStyle} style={{ textDecoration: 'none' }}>
+                <Typography
+                    variant="subtitle2"
+                    color="textPrimary"
+                    component="span"
                 >
-                    <Typography
-                      variant="subtitle2"
-                      color="textPrimary"
-                      component="span"
-                    >
-                      {t('pageWrapper.navbar.following')}
-                    </Typography>
-                  </a>
-            </MenuItem>
-            <MenuItem className={classes.menuItemStyle}>
-                <a
-                    className={classes.textDecorationNone}
-                    href="/projects/saved"
+                  {t('pageWrapper.navbar.followers')}
+                </Typography>
+            </Link>
+            <Link href={`/creators/${props.auth.username}/following`} className={classes.menuItemStyle} style={{ textDecoration: 'none' }}>
+                <Typography
+                    variant="subtitle2"
+                    color="textPrimary"
+                    component="span"
                 >
-                    <Typography
-                        variant="subtitle2"
-                        color="textPrimary"
-                        component="span"
-                    >
-                        {t('pageWrapper.navbar.savedProjects')}
-                    </Typography>
-                </a>
-            </MenuItem>
-            <MenuItem className={cn(classes.menuItemStyle, classes.logOutStyle)}>
+                  {t('pageWrapper.navbar.following')}
+                </Typography>
+            </Link>
+            <Link href="/projects/saved" className={classes.menuItemStyle} style={{ textDecoration: 'none' }}>
+                <Typography
+                    variant="subtitle2"
+                    color="textPrimary"
+                    component="span"
+                >
+                  {t('pageWrapper.navbar.savedProjects')}
+                </Typography>
+            </Link>
+            <MenuItem className={cn(classes.logOutStyle)}>
                 <Typography
                     className={common_classes.colorRed}
                     variant="subtitle2"
