@@ -4,6 +4,8 @@ const styles = theme => ({
         height: '85%',
         width: '70%',
         top: '3.5em',
+        left: '30%',
+        borderRadius: '10px',
       },
     },
 
