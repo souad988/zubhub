@@ -36,7 +36,7 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
             open={hamburgerMenuOpen}
             onClose={e => handleSetState(handleHamburgerMenuClose(e))}
             anchor={'right'}
-            PaperProps={{ style: { height: "80%", width: "70%", top: "3.5em" } }}
+            PaperProps={{ style: { height: "85%", width: "70%", top: "3.5em" } }}
         >
             <MenuItem className={classes.avatarItemStyle}>
                 <Avatar
@@ -46,10 +46,9 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                     alt={props.auth.username}
                 />
                 <Typography
-                    variant="subtitle2"
+                    variant="h6"
                     color="textPrimary"
                     component="span"
-                    className={classes.profileStyle}
                 >
                     {props.auth.username}
                 </Typography>
