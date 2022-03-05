@@ -1,24 +1,11 @@
 const styles = theme => ({
-    // hamburgerSidebarStyle: {
-      //   '& .MuiMenu-root': {
-      //     paddingTop: 0,
-      //     '& .MuiMenuItem-root': {
-      //       '&:first-child': {
-      //         backgroundColor: '#ffffff',
-      //         paddingTop: '12px',
-      //         paddingBottom: '8px',
-      //       },
-      //     },
-      //   },
-      //   [theme.breakpoints.up('1600')]: {
-      //     '& .MuiMenu-paper': {
-      //       width: '10em',
-      //       '& .MuiTypography-root': {
-      //         fontSize: '1.2rem',
-      //       },
-      //   },
-      // },
-    // },
+    hamburgerSidebarStyle: {
+      '& .MuiDrawer-paper': {
+        height: '85%',
+        width: '70%',
+        top: '3.5em',
+      },
+    },
 
     textDecorationNone: {
       textDecoration: 'none',
@@ -49,6 +36,7 @@ const styles = theme => ({
       height: '20%',
       paddingLeft:'15%',
       paddingRight:'15%',
+      pointerEvents: 'none',
     },
 
     avatarStyle: {

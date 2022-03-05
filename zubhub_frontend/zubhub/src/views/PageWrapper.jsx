@@ -112,7 +112,7 @@ function PageWrapper(props) {
     <>
       <ToastContainer />
       <CssBaseline />
-      <AppBar className={classes.navBarStyle}>
+      <AppBar className={classes.navBarStyle} style={{zIndex: (e) => e.zIndex.hamburgersidebar + 1}}>
         <Container className={classes.mainContainerStyle}>
           <Toolbar className={classes.toolBarStyle}>
             <Box className={classes.logoStyle}>

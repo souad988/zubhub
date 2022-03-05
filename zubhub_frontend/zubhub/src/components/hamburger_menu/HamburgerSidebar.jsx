@@ -35,8 +35,8 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
             id="hamburger_menu"
             open={hamburgerMenuOpen}
             onClose={e => handleSetState(handleHamburgerMenuClose(e))}
-            anchor={'right'}
-            PaperProps={{ style: { height: "85%", width: "70%", top: "3.5em" } }}
+            anchor={'top'}
+            style={{zIndex: 1250}}
         >
             <MenuItem className={classes.avatarItemStyle}>
                 <Avatar
