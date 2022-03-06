@@ -16,15 +16,12 @@ const styles = theme => ({
     logOutStyle: {
       borderTop: '1px solid #C4C4C4',
       backgroundColor: '#ededed',
-      '&:hover': {
-        backgroundColor: '#00B8C4',
-        '& .MuiTypography-root': {
-          color: 'white',
-        },
-      },
-      paddingLeft:'15%',
       height: '10%',
       width: '100%',
+      paddingTop: '2%',
+      paddingBottom: '2%',
+      paddingLeft: '3%',
+      paddingRight: '3%',
     },
 
     menuItemSelected: {
@@ -33,16 +30,26 @@ const styles = theme => ({
 
     menuItemStyle: {
       backgroundColor: '#ededed',
+      height: '10%',
+      width: '100%',
+      paddingTop: '2%',
+      paddingBottom: '2%',
+      paddingLeft: '3%',
+      paddingRight: '3%',
+    },
+
+    paddingItem: {
+      borderRadius: '10px',
+      paddingLeft: '15%',
+      height: '100%',
+
       '&:hover': {
         backgroundColor: '#00B8C4',
         '& .MuiTypography-root': {
           color: 'white',
         },
+        
       },
-      paddingTop: '6%',
-      paddingLeft:'15%',
-      height: '10%',
-      width: '100%',
     },
 
     avatarItemStyle: {

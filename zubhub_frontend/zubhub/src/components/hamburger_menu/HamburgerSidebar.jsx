@@ -54,6 +54,7 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                 </Typography>
             </MenuItem>
             <Link href='/profile' className={classes.menuItemStyle} style={{ textDecoration: 'none' }}>
+                <MenuItem className={classes.paddingItem}>
                 <Typography
                     variant="subtitle2"
                     color="textPrimary"
@@ -61,8 +62,10 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                 >
                   {t('pageWrapper.navbar.profile')}
                 </Typography>
+                </MenuItem>
             </Link>
             <Link href="/projects/create" className={classes.menuItemStyle} style={{ textDecoration: 'none' }}>
+            <MenuItem className={classes.paddingItem}>
                 <Typography
                     variant="subtitle2"
                     color="textPrimary"
@@ -70,8 +73,10 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                 >
                   {t('pageWrapper.navbar.createProject')}
                 </Typography>
+                </MenuItem>
             </Link>
             <Link className={classes.menuItemStyle} style={{ textDecoration: 'none' }}>
+            <MenuItem className={classes.paddingItem}>
                 <Typography
                     variant="subtitle2"
                     color="textPrimary"
@@ -79,8 +84,10 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                 >
                   Notifications
                 </Typography>
+                </MenuItem>
             </Link>
             <Link href={`/creators/${props.auth.username}/projects`} className={classes.menuItemStyle} style={{ textDecoration: 'none' }}>
+            <MenuItem className={classes.paddingItem}>
                 <Typography
                     variant="subtitle2"
                     color="textPrimary"
@@ -88,8 +95,10 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                 >
                   {t('pageWrapper.navbar.projects')}
                 </Typography>
+                </MenuItem>
             </Link>
             <Link href={`/creators/${props.auth.username}/followers`} className={classes.menuItemStyle} style={{ textDecoration: 'none' }}>
+            <MenuItem className={classes.paddingItem}>
                 <Typography
                     variant="subtitle2"
                     color="textPrimary"
@@ -97,8 +106,10 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                 >
                   {t('pageWrapper.navbar.followers')}
                 </Typography>
+                </MenuItem>
             </Link>
             <Link href={`/creators/${props.auth.username}/following`} className={classes.menuItemStyle} style={{ textDecoration: 'none' }}>
+            <MenuItem className={classes.paddingItem}>
                 <Typography
                     variant="subtitle2"
                     color="textPrimary"
@@ -106,8 +117,10 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                 >
                   {t('pageWrapper.navbar.following')}
                 </Typography>
+                </MenuItem>
             </Link>
             <Link href="/projects/saved" className={classes.menuItemStyle} style={{ textDecoration: 'none' }}>
+            <MenuItem className={classes.paddingItem}>
                 <Typography
                     variant="subtitle2"
                     color="textPrimary"
@@ -115,17 +128,19 @@ const HamburgerSidebar = ({hamburgerMenuOpen, ham_anchor_el, setState, t, props}
                 >
                   {t('pageWrapper.navbar.savedProjects')}
                 </Typography>
+                </MenuItem>
             </Link>
-            <MenuItem className={cn(classes.logOutStyle)}>
+            <Link className={cn(classes.logOutStyle)} style={{ textDecoration: 'none' }} onClick={e => logout(e, props)}>
+            <MenuItem className={classes.paddingItem}>
                 <Typography
                     className={common_classes.colorRed}
                     variant="subtitle2"
                     component="span"
-                    onClick={e => logout(e, props)}
                 >
                     {t('pageWrapper.navbar.logout')}
                 </Typography>
-            </MenuItem>
+                </MenuItem>
+            </Link>
         </Drawer>
     );
 }
