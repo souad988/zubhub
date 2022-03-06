@@ -56,7 +56,6 @@ const styles = theme => ({
       height: '50%',
       width: '25%',
       marginRight: '10%',
-      backgroundColor: 'black',
     },
 
     menuItemHeader: {
