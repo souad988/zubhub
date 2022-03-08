@@ -63,11 +63,11 @@ const useStyles = makeStyles(styles);
 const useCommonStyles = makeStyles(commonStyles);
 
 /**
-* @function PageWrapper View
-* @author Raymond Ndibe <ndiberaymond1@gmail.com>
-* 
-* @todo - describe function's signature
-*/
+ * @function PageWrapper View
+ * @author Raymond Ndibe <ndiberaymond1@gmail.com>
+ *
+ * @todo - describe function's signature
+ */
 function PageWrapper(props) {
   const backToTopEl = React.useRef(null);
   const classes = useStyles();
@@ -112,7 +112,7 @@ function PageWrapper(props) {
     <>
       <ToastContainer />
       <CssBaseline />
-      <AppBar className={classes.navBarStyle} style={{zIndex: 1251}}>
+      <AppBar className={classes.navBarStyle} style={{ zIndex: 1251 }}>
         <Container className={classes.mainContainerStyle}>
           <Toolbar className={classes.toolBarStyle}>
             <Box className={classes.logoStyle}>
@@ -330,20 +330,20 @@ function PageWrapper(props) {
                   >
                     <SearchIcon />
                   </IconButton>
-                    
-                  <HamburgerButton 
-                    setState={setState}
-                  />
+
+                  <HamburgerButton setState={setState} />
                   <HamburgerSidebar
                     hamburgerMenuOpen={hamburgerMenuOpen}
-                    ham_anchor_el={ham_anchor_el}
                     setState={setState}
                     t={t}
                     props={props}
                   />
 
                   <Avatar
-                    className={clsx(classes.avatarStyle, common_classes.removeOnSmallScreen)}
+                    className={clsx(
+                      classes.avatarStyle,
+                      common_classes.removeOnSmallScreen,
+                    )}
                     aria-label={`${props.auth.username}' Avatar`}
                     aria-controls="profile_menu"
                     aria-haspopup="true"
