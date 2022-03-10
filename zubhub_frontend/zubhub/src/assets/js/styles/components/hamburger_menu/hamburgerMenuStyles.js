@@ -1,10 +1,14 @@
 const styles = theme => ({
+  hamburgerButtonStyle: {
+    color: 'white',
+  },
+
   hamburgerSidebarStyle: {
     '& .MuiDrawer-paper': {
       height: '85%',
-      width: '70%',
+      width: '50%',
       top: '3.5em',
-      left: '30%',
+      left: '50%',
       borderRadius: '10px',
     },
   },
@@ -18,10 +22,9 @@ const styles = theme => ({
     backgroundColor: '#ededed',
     height: '10%',
     width: '100%',
-    paddingTop: '2%',
-    paddingBottom: '2%',
-    paddingLeft: '3%',
-    paddingRight: '3%',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 
   menuItemSelected: {
@@ -32,16 +35,16 @@ const styles = theme => ({
     backgroundColor: '#ededed',
     height: '10%',
     width: '100%',
-    paddingTop: '2%',
-    paddingBottom: '2%',
-    paddingLeft: '3%',
-    paddingRight: '3%',
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 
   paddingItem: {
     borderRadius: '10px',
     paddingLeft: '15%',
-    height: '100%',
+    height: '80%',
+    width: '90%',
 
     '&:hover': {
       backgroundColor: '#00B8C4',
@@ -67,6 +70,7 @@ const styles = theme => ({
   menuItemHeader: {
     marginLeft: '40%',
   },
+  
 });
 
 export default styles;

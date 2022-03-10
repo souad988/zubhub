@@ -54,8 +54,7 @@ import unstructuredLogo from '../assets/images/logos/unstructured-logo.png';
 import logo from '../assets/images/logos/logo.png';
 import styles from '../assets/js/styles/views/page_wrapper/pageWrapperStyles';
 import commonStyles from '../assets/js/styles';
-import HamburgerButton from '../components/hamburger_menu/HamburgerButton.jsx';
-import HamburgerSidebar from '../components/hamburger_menu/HamburgerSidebar';
+import HamburgerMenu from '../components/hamburger_menu/HamburgerMenu.jsx';
 
 import languageMap from '../assets/js/languageMap.json';
 
@@ -102,11 +101,10 @@ function PageWrapper(props) {
     }
   };
 
-  const { anchor_el, ham_anchor_el, loading, open_search_form } = state;
+  const { anchor_el, loading, open_search_form } = state;
   const { t } = props;
   const { hero } = props.projects;
   const profileMenuOpen = Boolean(anchor_el);
-  const hamburgerMenuOpen = Boolean(ham_anchor_el);
 
   return (
     <>
@@ -331,13 +329,7 @@ function PageWrapper(props) {
                     <SearchIcon />
                   </IconButton>
 
-                  <HamburgerButton setState={setState} />
-                  <HamburgerSidebar
-                    hamburgerMenuOpen={hamburgerMenuOpen}
-                    setState={setState}
-                    t={t}
-                    props={props}
-                  />
+                  <HamburgerMenu t={t} props={props} />
 
                   <Avatar
                     className={clsx(

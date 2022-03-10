@@ -1,14 +1,11 @@
-import React from 'react';
-import styles from '../../assets/js/styles/components/hamburger_menu/hamburgerSidebarStyles.js';
-import commonStyles from '../../assets/js/styles';
+import React, { useState } from 'react';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
-import {
-  logout,
-  handleHamburgerMenuClose,
-} from '../../views/pageWrapperScripts';
-import clsx from 'clsx';
+import styles from '../../assets/js/styles/components/hamburger_menu/hamburgerMenuStyles.js';
+import commonStyles from '../../assets/js/styles';
 import cn from 'classnames';
-
+import clsx from 'clsx';
 import {
   Typography,
   Drawer,
@@ -16,31 +13,37 @@ import {
   Avatar,
   MenuItem,
 } from '@material-ui/core';
+import { logout } from '../../views/pageWrapperScripts';
 
 const useStyles = makeStyles(styles);
 const useCommonStyles = makeStyles(commonStyles);
 
-const HamburgerSidebar = ({
-  hamburgerMenuOpen,
-  setState,
-  t,
-  props,
-}) => {
+const HamburgerMenu = ({ t, props }) => {
   const classes = useStyles();
   const common_classes = useCommonStyles();
-  const handleSetState = obj => {
-    if (obj) {
-      Promise.resolve(obj).then(obj => {
-        setState(state => ({ ...state, ...obj }));
-      });
-    }
-  };
+
+  const [hamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);
+
   return (
+    [
+    <IconButton
+      className={cn(
+        classes.hamburgerButtonStyle,
+        common_classes.addOnSmallScreen,
+      )}
+      aria-label="hamburger_menu"
+      aria-haspopup="true"
+      onClick={e => {
+        setHamburgerMenuOpen(!hamburgerMenuOpen);
+      }}
+    >
+      <MenuIcon />
+    </IconButton>,
     <Drawer
       className={classes.hamburgerSidebarStyle}
       id="hamburger_menu"
       open={hamburgerMenuOpen}
-      onClose={e => handleSetState(handleHamburgerMenuClose(e))}
+      onClose={e => setHamburgerMenuOpen(false)}
       anchor={'top'}
       style={{ zIndex: 1250 }}
     >
@@ -147,7 +150,8 @@ const HamburgerSidebar = ({
         </MenuItem>
       </Link>
     </Drawer>
+    ]
   );
-};
+}
 
-export default HamburgerSidebar;
+export default HamburgerMenu;
