@@ -329,7 +329,7 @@ function PageWrapper(props) {
                     <SearchIcon />
                   </IconButton>
 
-                  <HamburgerMenu t={t} props={props} />
+                  <HamburgerMenu props={props} />
 
                   <Avatar
                     className={clsx(

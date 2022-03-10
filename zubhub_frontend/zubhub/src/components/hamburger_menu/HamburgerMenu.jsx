@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import { makeStyles } from '@material-ui/core/styles';
@@ -14,15 +14,26 @@ import {
   MenuItem,
 } from '@material-ui/core';
 import { logout } from '../../views/pageWrapperScripts';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux'
+import * as AuthActions from '../../store/actions/authActions';
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles(styles);
 const useCommonStyles = makeStyles(commonStyles);
 
-const HamburgerMenu = ({ t, props }) => {
+const HamburgerMenu = ({ props }) => {
   const classes = useStyles();
   const common_classes = useCommonStyles();
 
   const [hamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);
+  const {t} = useTranslation();
+  const auth = useSelector((state) => state.auth);
+  const history = useHistory();
+
+  const dispatch = useDispatch();
+  const logouth = (args) => dispatch(AuthActions.logout(args));
 
   return (
     [
@@ -50,12 +61,12 @@ const HamburgerMenu = ({ t, props }) => {
       <MenuItem className={classes.avatarItemStyle}>
         <Avatar
           className={clsx(classes.avatarStyle)}
-          aria-label={`${props.auth.username}' Avatar`}
-          src={props.auth.avatar}
-          alt={props.auth.username}
+          aria-label={`${auth.username}' Avatar`}
+          src={auth.avatar}
+          alt={auth.username}
         />
         <Typography variant="h6" color="textPrimary" component="span">
-          {props.auth.username}
+          {auth.username}
         </Typography>
       </MenuItem>
       <Link
@@ -91,7 +102,7 @@ const HamburgerMenu = ({ t, props }) => {
         </MenuItem>
       </Link>
       <Link
-        href={`/creators/${props.auth.username}/projects`}
+        href={`/creators/${auth.username}/projects`}
         className={classes.menuItemStyle}
         style={{ textDecoration: 'none' }}
       >
@@ -102,7 +113,7 @@ const HamburgerMenu = ({ t, props }) => {
         </MenuItem>
       </Link>
       <Link
-        href={`/creators/${props.auth.username}/followers`}
+        href={`/creators/${auth.username}/followers`}
         className={classes.menuItemStyle}
         style={{ textDecoration: 'none' }}
       >
@@ -113,7 +124,7 @@ const HamburgerMenu = ({ t, props }) => {
         </MenuItem>
       </Link>
       <Link
-        href={`/creators/${props.auth.username}/following`}
+        href={`/creators/${auth.username}/following`}
         className={classes.menuItemStyle}
         style={{ textDecoration: 'none' }}
       >
@@ -137,7 +148,9 @@ const HamburgerMenu = ({ t, props }) => {
       <Link
         className={cn(classes.logOutStyle)}
         style={{ textDecoration: 'none' }}
-        onClick={e => logout(e, props)}
+        onClick={e => logout(e, {
+          logouth, auth, history, t
+        })}
       >
         <MenuItem className={classes.paddingItem}>
           <Typography
