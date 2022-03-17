@@ -13,7 +13,6 @@ import {
   Avatar,
   MenuItem,
 } from '@material-ui/core';
-import { logout } from '../../views/pageWrapperScripts';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux'
@@ -23,18 +22,16 @@ import { useHistory } from "react-router-dom";
 const useStyles = makeStyles(styles);
 const useCommonStyles = makeStyles(commonStyles);
 
-const HamburgerMenu = ({ props }) => {
+const HamburgerMenu = () => {
   const classes = useStyles();
   const common_classes = useCommonStyles();
 
   const [hamburgerMenuOpen, setHamburgerMenuOpen] = useState(false);
   const {t} = useTranslation();
-  const auth = useSelector((state) => state.auth);
   const history = useHistory();
-
   const dispatch = useDispatch();
-  const logouth = (args) => dispatch(AuthActions.logout(args));
-
+  const auth = useSelector((state) => state.auth);
+  
   return (
     [
     <IconButton
@@ -148,9 +145,7 @@ const HamburgerMenu = ({ props }) => {
       <Link
         className={cn(classes.logOutStyle)}
         style={{ textDecoration: 'none' }}
-        onClick={e => logout(e, {
-          logouth, auth, history, t
-        })}
+        onClick={() => dispatch(AuthActions.logout({token: auth.token, history, t}))}
       >
         <MenuItem className={classes.paddingItem}>
           <Typography
