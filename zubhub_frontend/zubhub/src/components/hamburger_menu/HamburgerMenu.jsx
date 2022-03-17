@@ -44,9 +44,9 @@ const HamburgerMenu = ({ props }) => {
       )}
       aria-label="hamburger_menu"
       aria-haspopup="true"
-      onClick={e => {
-        setHamburgerMenuOpen(!hamburgerMenuOpen);
-      }}
+      onClick={() => 
+        setHamburgerMenuOpen(!hamburgerMenuOpen)
+      }
     >
       <MenuIcon />
     </IconButton>,
@@ -54,7 +54,7 @@ const HamburgerMenu = ({ props }) => {
       className={classes.hamburgerSidebarStyle}
       id="hamburger_menu"
       open={hamburgerMenuOpen}
-      onClose={e => setHamburgerMenuOpen(false)}
+      onClose={() => setHamburgerMenuOpen(false)}
       anchor={'top'}
       style={{ zIndex: 1250 }}
     >
